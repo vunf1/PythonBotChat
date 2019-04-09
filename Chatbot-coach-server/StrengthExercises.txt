@@ -1,0 +1,124 @@
+ab crunch machine,core
+ab roller,core
+air bike,core
+alternate hammer curl,bicep
+alternate heel touches,core
+cable shoulder press,shoulder
+deltoid raise,shoulder
+press up,chest
+kettlebell press,shoulder
+kettlebell row,back
+arm circles,shoulder
+glute bridge,glute
+back flys,shoulder
+backward drags,quad
+backward medicine ball throw,shoulder
+balance board,calf
+band assisted pull-up,lat
+band pull apart,shoulder
+barbell ab rollout,core
+barbell ab rollout - on knees,core
+barbell bench press - medium grip,chest
+barbell curl,bicep
+barbell deadlift,back
+barbell full squat,quad
+barbell glute bridge,glute
+barbell incline shoulder raise,shoulder
+barbell delt row,shoulder
+barbell calf raise,calf
+barbell shoulder press,shoulder
+barbell shrug,trap
+barbell squat,quad
+bear crawl sled drags,quad
+bicycling,quad
+bicycling,quad
+press up - hands close,tricep
+cable chest press,chest
+cable deadlifts,quad
+cable hammer curls - rope attachment,bicep
+cable triceps extension,tricep
+cable shoulder press,shoulder
+cable shrugs,trap
+calf raises - with bands,calf
+pull - ups,lat
+clean and jerk,shoulder
+clean and press,shoulder
+clean deadlift, leg
+clean pull,quad
+clean shrug,trap
+close-grip barbell bench press,tricep
+close-grip dumbbell press,tricep
+close-grip front lat pulldown,lat
+close-grip standing barbell curl,bicep
+crunch - hands overhead,core
+crunches,core
+dip machine,tricep
+dips - chest version,chest
+dips - triceps version,tricep
+double kettlebell jerk,shoulder
+double kettlebell push press,shoulder
+double kettlebell snatch,shoulder
+dumbbell alternate bicep curl,bicep
+dumbbell bench press,chest
+dumbbell bench press with neutral grip,chest
+dumbbell bicep curl,bicep
+dumbbell flys,chest
+dumbbell incline shoulder raise,shoulder
+dumbbell lunges,quad
+dumbbell raise,shoulder
+dumbbell shoulder press,shoulder
+dumbbell shrug,trap
+dumbbell squat,quad
+elliptical trainer,quad
+farmer's walk, forearm
+fast skipping,quad
+flutter kicks,glute
+full range-of-motion lat pulldown,lat
+hammer curls,bicep
+handstand push-ups,shoulder
+hip extension with bands,glute
+hip flexion with band,quad
+hip lift with band,glute
+kettlebell pass between the legs,core
+kipping muscle up,lat
+leg extensions,quad
+leg press,quad
+machine bench press,chest
+machine bicep curl,bicep
+machine shoulder (military) press,shoulder
+machine triceps extension,tricep
+medicine ball chest pass,chest
+medicine ball full twist,core
+medicine ball scoop throw,shoulder
+mountain climbers,quad
+muscle up,lat
+oblique crunches - on the floor,core
+parallel bar dip,tricep
+plank,core
+plank with twist, core
+plate twist,core
+push-up wide,chest
+push-ups - close triceps position,tricep
+push-ups with feet elevated,chest
+push-ups,chest
+recumbent bike,quad
+romanian deadlift,leg
+romanian deadlift from deficit,leg
+rope climb,lat
+russian twist,core
+scissor kick,core
+side bridge,core
+side to side chins,lat
+single leg butt kick,quad
+single leg glute bridge,glute
+sit-up,core
+sled drag - harness,quad
+sled push,quad
+sledgehammer swings,core
+squat with bands,quad
+sumo deadlift,leg
+tire flip,quad
+triceps pulldown,tricep
+wide-grip barbell bench press,chest
+wide-grip lat pulldown,lat
+wide-grip pull-up,lat

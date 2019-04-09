@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ---------- GENERAL ---------- */
+
+
+
+/*  elements html and body with this type of instructions */
+html, body {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* .classes named chatWin have this instructions */
+.chatWin {
+	margin: 0 auto;
+	min-width: 411px;
+	width: 45%;
+	padding: 20px;
+	border: 3px solid black;
+	height: 90%;
+	position: relative;
+}
+
+/* #id element named bt_send have this instructions    */
+.form-control{
+    width:60%;
+	display: absolute;
+	
+    
+    
+    
+}
+label{
+    
+    
+    margin-bottom: auto;
+}
+
+
+
+input {
+	height: auto;
+	
+	padding: 5px;
+}
+
+button {
+	padding: 5px;
+	width: 15%;
+}
+
+.inMsg, .outMsg {
+	display:block;
+	clear: both;
+	padding: 10px;
+	border-radius: 20px;
+	margin-bottom: 2px;
+    margin-right: 10px;
+
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.inMsg {
+	background: #eee;
+	float: left;
+}
+
+.outMsg {
+	float: right;
+	background: #0084ff;
+	color: #fff;
+}

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Joao Maia -->
+	<meta charset="UTF-8">
+	<title>Live Chat - User Interface</title>
+	
+	    <!-- Bootstrap ( Framework for css ) -->
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrapV4.css">
+    
+	    <!-- Bootstrap ( Framework for js ) -->
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="js/jquery.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" ></script>-->
+    <script src="js/popper.js" ></script>
+   <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>-->
+    <script src="js/bootstrap_min.js"></script>
+        <!-- Personal CSS file -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+        <!-- Jquery Framework for JavaScript -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="js/jquery_min.js"></script>
+    
+    
+    
+<!-- Pure JS to cancel keys from keyboard in this case cancel the ENTER key ,This create a event with the purpose to cancel the key using 3 types of identification of the ENTER key on keyboards, if the key is pressed the event will return false;
+    In Jquery exist a better/easy/smaller way to do it
+<script type="text/javascript">
+window.addEventListener('keydown',function(e){
+    if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13)
+    {if(e.target.nodeName=='INPUT'&&e.target.type=='text')
+    {e.preventDefault();return false;}}},true);
+</script>-->
+<script>
+//chris
+function objectifyForm(formArray) {//serialize data function
+
+	var returnArray = {};
+	for (var i = 0; i < formArray.length; i++){
+		returnArray[formArray[i]["name"]] = formArray[i]["value"];
+	}
+	return returnArray;
+}
+
+
+
+
+
+
+$(document).ready(function(){ //Joao
+    
+    
+    //this will give the Keycode on browser console,is needed for the event bellow
+    document.addEventListener("keydown", function(event) { //Joao
+        //console.log(event.which);
+    });
+
+
+
+    //This will cancel the form action , cancel the request for the url redirection
+    $("form").submit(function(e) { //Joao
+    e.preventDefault();
+    });
+    
+    
+        //This will trigger the function then pressed the key ENTER inside form element ( because we cancel the ENTER function )
+        $("form").bind("keypress", function(e) { //Joao
+            
+        if (e.keyCode == 13)
+            {
+             click_e();
+            }
+        });
+
+
+
+
+function click_e(){ //Joao
+    
+	    if ($("input").val()==""){//this dont let the user input nothing to the server
+	        alert("Please type a message before you send")
+	        
+	        
+	    }else{
+	    
+	        $(".msgBox").append("<div class = 'outMsg'>" + objectifyForm($("form").serializeArray()).message + "</div>"); //this will append the data input on input element on web enviroment inside the div element
+	    
+	        //chris & Joao contribute
+	        $.ajax({ // this ajax(XMLHttpRequest) will send the data inputed to the server made in python and then handle that data
+	            type: "POST", //type of request
+	            url: ("http://" + self.location.hostname + ":8000"), // the resquest will be send to this address
+	            crossDomain: true,//allow (because of the browser) go to a diferent address out of the range og the actual address
+	            data: JSON.stringify(objectifyForm($("form").serializeArray())),
+	            dataType: "json",
+	            success: function(responseData, textStatus, jqXHR) {
+	    
+	    
+	                var json = JSON.parse(responseData); //this will parse the data receive from the server in json
+	                var value = json.message; // this will grab the value on the json file
+	                $("form").find("input[type=text], textarea").val(""); // this will empty the input element
+	                $(".msgBox").append("<div class = 'inMsg'>" + value + "</div>"); // this will put the value of the json file received and put inside the div and then creates the conversation between the client/server
+	                
+	                $(function () { //this function in scroll automatically after a successful request
+	                    var element = $('.chatWin');
+	                    var height = element[0].scrollHeight;
+	                    element.scrollTop(height);
+	                    
+	                });
+	                
+	                
+	    
+	            },
+	            error: function(responseData, textStatus, errorThrown) { // this handle error if accour
+	                alert(JSON.stringify(responseData));
+	                document.getElementById("showresulthere").innerHTML = "ERROR" //put Error text in the element with name showresulthere
+	            }
+	        });
+	    }
+    
+    
+    
+}
+
+
+
+	$("button").click(function (){
+	    
+	    click_e();
+		
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
+
+
+
+
+
+	
+
+
+
+
+</script>
+</head>
+<body>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- this style(inside div element) is a optional for not put in a css file that instruction , this instructions create a scrollable element in y direction-->
+
+	<div  style="overflow-y: scroll;"  class = "chatWin">
+		<div class = "msgBox">
+			<div class = "inMsg">Hey there! You can ask me for
+help at the gym! If you are confused, press the help button for more information.</div>
+		</div>
+	</div>
+		<div align="center" >
+			<form>
+			    
+			   <!-- <label type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Help!
+</label>--><label type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalToHelpUser">Help!
+</label>
+			    
+				<input autocomplete="off"  id="message" type="text" name="message" placeholder="Type your message..."><button class="btn btn-primary" type="button">Send</button>
+			</form>
+		</div>
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+<!-- Modal -->
+<div class="modal fade" id="ModalToHelpUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Commands to help to use Chat</h5>
+        
+        </button>
+      </div>
+      <div class="modal-body">
+        
+     <p>To Do: Help the user input something and try not to get errors during the program/chatbot
+     </p>
+     <p>Example: <br># I want to train my biceps<br>
+     # What do I need to get a beautiful biceps arms ?</p>
+     <p>........</p>
+      </div>
+      <div class="modal-footer">
+        <label type="button" class="btn btn-primary" data-dismiss="modal">OK</label>
+      </div>
+    </div>
+  </div>
+</div>
+		
+		
+		
+		
+</body>
+</html>

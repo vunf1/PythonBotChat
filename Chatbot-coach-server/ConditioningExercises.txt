@@ -1,0 +1,21 @@
+treadmill,high
+treadmill,medium
+treadmill,low
+rowing machine,high
+rowing machine,medium
+rowing machine,low
+bike,high
+bike,medium
+bike,low
+cross trainer,high
+cross trainer,medium
+cross trainer,low
+eliptical,high
+eliptical,medium
+eliptical,low
+step machine,high
+step machine,medium
+step machine,low
+skipping,high
+skipping,medium
+skipping,low
